@@ -1,41 +1,51 @@
 //------------//------------//------------Angular------------//------------//------------//
 (function(){
-  var app = angular.module("IndexToDo", []);
+  var app = angular.module("ToDo", []);
+  var boardRow = [
+    { title : "title", toDoList : [] },
 
+  ];
 
-  app.controller("WallController", function(){
-    this.wall = {};
-
-    // $scope.boardRow: {"="};
-
-  });
-
-  app.controller("BoardController", function(){
+  //------------//------------//------------Controller's------------//------------//------------//
+  //==>
+  //------------//----------== todoController ==----------//------------//
+  app.controller('todoController', ['$scope', function($scope){
     this.boards = boardRow;
+
+    // insert a new folder
+    // working well
+    $scope.addNewFolder = function(){
+      boardRow.push( { title : "Insert Title", toDoList : [] } );
+    };
+
+    // deleted current project in folder
+    $scope.clearCompleted = function(){
+      $scope.todos = $scope.todos.filter(function(item){
+        return !item.done;
+      });
+    };
+
+  }]);
+
+  //==>
+  //------------//----------== FormController ==----------//------------//
+  app.controller("FormController", function(){
+    this.file = {};
+
+    this.addFile  = function(todoFile){
+        todoFile.toDoList.push(this.file);
+        this.file = {};
+    };
   });
 
+  //==>
+  //------------//----------== FileController ==----------//------------//
   app.controller("FileController", function(){
     this.file = boardRow;
   });
 
-  app.controller('ReviewController', function(){
-    this.review = {};
-
-    this.addReview  = function(todoFile){
-        todoFile.toDoList.push(this.file);
-      this.file = {};
-    };
-  });
+  //------------//------------//------------/Controller------------//------------//------------//
 
 
-
-
-  var boardRow = [
-    { title : "title", toDoList : [] },
-  ];
-
-
-
-
-
+//------------//------------//------------/Angular------------//------------//------------//
 })();
