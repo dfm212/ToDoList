@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="IndexToDo">
+<html lang="en" ng-app="ToDo">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style\style.css">
@@ -15,32 +15,62 @@
 
   <title>ToDO</title>
 </head>
-<body ng-controller="WallController as wallWrap">
+<body >
 
-  <div id="wallModule">
+  <div id="wallModule" ng-controller="todoController as todoCtrl">
 
-    <div id="boardsModule" ng-controller="BoardController as wallBoard">
-      <div id="board" class="board" ng-repeat="todoFile in wallBoard.boards">
+    <div id="boardsModule">
+      <div id="board" class="board" ng-repeat="todoFile in todoCtrl.boards">
         <h4 class="boardTitle" contenteditable="true" value="Title">{{todoFile.title}}</h4>
-        <ol>
-          <li ng-repeat="files in todoFile.toDoList">
-            <i class="del"><button class="btnDelFolder pull-right">X</button></i>
-            <a href="#"><div class="folder"><span placeholder="Card name" contenteditable="true">{{files}}</span></div></a>
-          </li>
-        </ol>
-        <form name="ToDoForm" ng-controller="ReviewController as fileCtrl" ng-submit="fileCtrl.addReview(todoFile)">
-          <input type="text" class="addFolderName" ng-class="{ 'hidden': ! showAddInput }" ng-model="fileCtrl.file.toDoList" required>
+
+        <section>
+          <ul>
+            <li ng-repeat="todo in todoFile.toDoList">
+              <i class="del"><button class="btnDelFolder pull-right"  ng-click="clearCompleted()">X</button></i>
+              <a href="#"><div class="folder"><span placeholder="Card name" contenteditable="true">{{todo}}</span></div></a>
+            </li>
+          </ul>
+        </section>
+
+        <form name="frm" ng-controller="FormController as formCtrl" ng-submit="formCtrl.addFile(todoFile)">
+          <input type="text" name="newTodo" ng-model="formCtrl.file.toDoList" ng-class="{ 'hidden': ! showAddInput }" required>
           <div class="fixed-top">
             <button type="button" name="cancelAddFolder" class="cancel" ng-class="{ 'hidden': ! showAddInput }">cancel</button>
-            <button type="submit" id="submit" value="Submit" name="acceptAddFolder" class="add pull-right" ng-class="{ 'hidden': ! showAddInput }" novalidate>add</button>
+            <button type="submit" class="add pull-right" ng-class="{ 'hidden': ! showAddInput }">add</button>
           </div>
         </form>
+
         <button type="button" class="newFolder" ng-click="showAddInput = ! showAddInput">New File</button>
       </div>
     </div>
 
-    <button type="button" id="newBoard" class="newBoard">New Boarder</button>
+    <button class="newBoard" ng-click="addNewFolder()">New Folder</button>
   </div>
+
+
+
+
+
+
+  <!-- <div id="wallModule">
+
+
+    <div id="boardsModule" ng-controller="todoController">
+      <form name="frm" ng-submit="addTodo()">
+        <input type="text" name="newTodo" ng-model="newTodo" required>
+        <button ng-disable="frm.$invalid">go</button>
+      </form>
+      <button ng-click="clearCompleted()">Clear completed</button>
+      <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+        </li>
+      </ul>
+      <button class="newBoard" ng-click="addNewFolder()">New Folder</button>
+    </div>
+
+  </div> -->
 
 
 
