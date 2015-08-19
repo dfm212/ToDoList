@@ -12,18 +12,19 @@
   app.controller('todoController', ['$scope', function($scope){
     this.boards = boardRow;
 
+
+    // showme = !showme;
+
     // insert a new folder
-    // working well
     $scope.addNewFolder = function(){
       boardRow.push( { title : "Insert Title", toDoList : [] } );
     };
 
     // deleted current project in folder
-    $scope.clearCompleted = function(){
-      $scope.todos = $scope.todos.filter(function(item){
-        return !item.done;
-      });
-    };
+    // =========>
+    // is not working
+    // =========>
+
 
   }]);
 
@@ -36,6 +37,8 @@
         todoFile.toDoList.push(this.file);
         this.file = {};
     };
+
+
   });
 
   //==>

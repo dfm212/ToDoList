@@ -27,9 +27,9 @@ input:focus{
   border-bottom: solid 2px #969696;
   outline: none;
 }
-h1,h2,h3,h4,h5,h6{
-  margin: none!important;
-  padding: none!important;
+h2{
+  color: #ffffff !important;
+  margin: 0 !important;
 }
 span{
   display: block;
@@ -47,6 +47,11 @@ ul{
 .container-fluid{
   padding: none!important;
 }
+.navbar{
+  margin-bottom: 0 !important;
+  background: #004a75 !important;
+  border: none !important;
+}
 /*----------*//*----------*//*----------SECTION----------*//*----------*//*----------*/
 #boardsModule{
   display: inline-block;
@@ -55,7 +60,9 @@ ul{
 #wallModule{
   background: #0b6da7;
   min-height: 720px;
+  height: auto;
   padding: 50px 20px 50px 20px;
+  width: auto;
 }
 .btnDelFolder{
   background: none!important;
