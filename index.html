@@ -21,11 +21,18 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
+<<<<<<< HEAD
         <h2 class="navbar-brand">ToDo App</h2>
+=======
+        <a class="navbar-brand" href="#">
+          <h2>ToDo App</h2>
+        </a>
+>>>>>>> origin/master
       </div>
         <a href="#"><img id="GitHubLog" class="pull-right" src="img\git.png" alt="GitHub logo"></a>
     </div>
   </nav>
+<<<<<<< HEAD
 
   <section>
     <div id="wallModule" ng-controller="todoController as todoCtrl">
@@ -45,6 +52,42 @@
 
         </div>
       </div>
+=======
+
+
+  <section>
+    <div id="wallModule" ng-controller="todoController as todoCtrl">
+
+      <div id="boardsModule">
+        <div id="board" class="board" ng-repeat="todoFile in todoCtrl.boards">
+          <h4 class="boardTitle" contenteditable="true" value="Title">{{todoFile.title}}</h4>
+
+          <section>
+            <ul>
+              <li ng-repeat="todo in todoFile.toDoList">
+                <i class="del"><button class="btnDelFolder pull-right"  ng-click="clearCompleted()">X</button></i>
+                <a href="#"><div class="folder"><span placeholder="Card name" contenteditable="true">{{todo}}</span></div></a>
+              </li>
+            </ul>
+          </section>
+
+          <form name="frm" ng-controller="FormController as formCtrl" ng-submit="formCtrl.addFile(todoFile)">
+            <input type="text" name="newTodo" ng-model="formCtrl.file.toDoList" ng-show="showme" required>
+            <div class="fixed-top">
+              <button type="submit" class="add pull-right" ng-show="showme">add</button>
+            </div>
+          </form>
+
+          <button type="button" name="cancelAddFolder" class="cancel" ng-click="showme=false"ng-show="showme">cancel</button>
+          <button type="button" class="newFolder" ng-click="showme=true" ng-hide="showme" >New File</button>
+
+        </div>
+      </div>
+
+      <button class="newBoard" ng-click="addNewFolder()">New Folder</button>
+    </div>
+  </section>
+>>>>>>> origin/master
 
       <button class="newBoard" ng-click="addNewFolder()"><h4>New Folder</h4></button>
     </div>
