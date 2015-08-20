@@ -34,13 +34,10 @@ input:focus{
 h2{
   color: #ffffff !important;
   margin: 0 !important;
-<<<<<<< HEAD
 }
 h4{
   margin: 0 !important;
   padding: 0 !important;
-=======
->>>>>>> origin/master
 }
 span{
   display: block;
@@ -74,7 +71,6 @@ ul{
   height: auto;
   padding: 50px 20px 50px 20px;
   width: auto;
-<<<<<<< HEAD
 }
 #GitHubLog{
     height: auto;
@@ -84,8 +80,6 @@ ul{
 .done{
   color: rgba(99, 99, 99, 0.5);
   text-decoration: line-through;
-=======
->>>>>>> origin/master
 }
 .btnDelFolder{
   background: none!important;
