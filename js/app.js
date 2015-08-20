@@ -1,41 +1,37 @@
 //------------//------------//------------Angular------------//------------//------------//
 (function(){
-  var app = angular.module("IndexToDo", []);
+  var app = angular.module("ToDo", ['todo-directives']);//
+  var boardRow = [ { title : "Hello World!", toDoList : [] }, ];
 
-
-  app.controller("WallController", function(){
-    this.wall = {};
-
-    // $scope.boardRow: {"="};
-
-  });
-
-  app.controller("BoardController", function(){
+  //------------//------------//------------Controller's------------//------------//------------//
+  //------------//----------== todoController ==----------//------------//
+  app.controller('todoController', ['$scope', function($scope){
     this.boards = boardRow;
-  });
 
-  app.controller("FileController", function(){
-    this.file = boardRow;
-  });
+    // insert a new folder
+    $scope.addNewFolder = function(){
+      boardRow.push( { title : "Insert Title", toDoList : [] } );
+    };
 
-  app.controller('ReviewController', function(){
-    this.review = {};
+    // deleted current project in folder
+    // =========>
+    // code
+    // =========>
 
-    this.addReview  = function(todoFile){
+  }]);
+  //------------//----------== FormController ==----------//------------//
+  app.controller("FormController", function(){
+    this.file = {};
+
+    this.addFile  = function(todoFile){
         todoFile.toDoList.push(this.file);
-      this.file = {};
+        this.file = {};
     };
   });
 
-
-
-
-  var boardRow = [
-    { title : "title", toDoList : [] },
-  ];
-
-
-
-
+  //------------//----------== FileController ==----------//------------//
+  app.controller("FileController", function(){
+    this.file = boardRow;
+  });
 
 })();
