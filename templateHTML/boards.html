@@ -3,7 +3,7 @@
     <li ng-repeat="todo in todoFile.toDoList">
       <i class="del"><button class="btnDelFolder pull-right" ng-click="done=!done; showder=!showder" ng-hide="showder">done</button></i>
       <i class="del"><button class="btnDelFolder pull-right" ng-click="done=!done; showder=!showder" ng-show="showder">todo</button></i>
-      <div class="folder"><span ng-class="{'done': done}" placeholder="Card name" contenteditable="true">{{todo}}</span></div>
+      <div class="folder"><span ng-class="{'done': done}" placeholder="Card name" contenteditable="true">{{todo.toDoList}}</span></div>
     </li>
   </ul>
 </section>
