@@ -16,7 +16,7 @@ app.directive("boards", function() {
   return {
     restrict: 'E',
   // =====> P R O D U C T I O N
-    templateUrl: "http://localhost/ToDoList/templateHTML/boards.html"
+    templateUrl: "http://dfm212.github.io/ToDoList/templateHTML/boards.html"
   // =====> G I T H U B
     // templateUrl: "http://localhost/ToDoList/templateHTML/boards.html"
   };
