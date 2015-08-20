@@ -1,7 +1,0 @@
-var boardRow = [
-
-  { title : "title",
-    toDoList : ["1","2","3"]
-  },
-
-];
