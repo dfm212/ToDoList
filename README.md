@@ -2,4 +2,4 @@
 
 BETA
 
-View live demonstration site at: https://github.com/dfm212/ToDoList
+View live demonstration site at: http://dfm212.github.io/ToDoList/
