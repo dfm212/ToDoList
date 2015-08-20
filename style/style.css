@@ -14,6 +14,10 @@ button{
 button:hover{
   font-weight: bolder;
 }
+button h4:hover{
+  font-weight: bold;
+  color: #ffffff;
+}
 input{
   border: none;
   border-bottom: solid 2px #c9c9c9;
@@ -30,6 +34,13 @@ input:focus{
 h2{
   color: #ffffff !important;
   margin: 0 !important;
+<<<<<<< HEAD
+}
+h4{
+  margin: 0 !important;
+  padding: 0 !important;
+=======
+>>>>>>> origin/master
 }
 span{
   display: block;
@@ -63,6 +74,18 @@ ul{
   height: auto;
   padding: 50px 20px 50px 20px;
   width: auto;
+<<<<<<< HEAD
+}
+#GitHubLog{
+    height: auto;
+    margin-top: 10px;
+    width: 35px;
+}
+.done{
+  color: rgba(99, 99, 99, 0.5);
+  text-decoration: line-through;
+=======
+>>>>>>> origin/master
 }
 .btnDelFolder{
   background: none!important;
@@ -79,16 +102,22 @@ ul{
   color: #7d7c7c;
 }
 .newBoard{
-  background: #e3e3e3;
+  background-color: rgba(227, 227, 227, 0.2);
   border-color: #cccccc;;
   border-radius: 5px;
   border-style: dashed;
   border-width: 2px;
+  color: #c8c8c8;
   height: 40px;
   margin: 5px;
   padding: 5px;
   vertical-align: top;
   width: 200px;
+}
+.newBoard:hover{
+  border-color: #ffffff;
+  border-width: 2px;
+
 }
 .board{
   background: #e3e3e3;

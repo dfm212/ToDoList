@@ -1,0 +1,7 @@
+ <!--  -->
+<form name="frm" ng-controller="FormController as formCtrl" ng-submit="formCtrl.addFile(todoFile)">
+  <input type="text" name="newTodo" ng-model="formCtrl.file.toDoList" ng-show="showme" required>
+  <button type="submit" class="add pull-right" ng-click="showme=false" ng-show="showme">add</button>
+  <button type="button" name="cancelAddFolder" class="cancel" ng-click="showme=false"ng-show="showme">cancel</button>
+  <button type="button" class="newFolder" ng-click="showme=true" ng-hide="showme" >New File</button>
+</form>
